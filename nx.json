@@ -12,15 +12,32 @@
   "npmScope": "template-editor",
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "NWIxOGFiMzAtMjgzZS00ODI1LThmZjctOWRmNDFjZGU4NmYzfHJlYWQtd3JpdGU=",
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
       }
     }
   },
   "projects": {
     "backend": {
       "tags": []
+    },
+    "client": {
+      "tags": []
+    },
+    "client-e2e": {
+      "tags": [],
+      "implicitDependencies": ["client"]
+    },
+    "review": {
+      "tags": []
+    },
+    "review-e2e": {
+      "tags": [],
+      "implicitDependencies": ["review"]
     }
   }
 }
