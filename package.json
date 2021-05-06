@@ -9,7 +9,7 @@
     "start:backend": "nx serve backend",
     "dev": "concurrently -p=\"{name}\" -n=\"React,NestJS\" -c=\"green,blue\" \"npm run start:client\" \"npm run start:backend\"",
     "build:client": "nx build client --prod",
-    "build:review": "nx build review --prod",
+    "build:review": "nx build review --prod --baseHref=review",
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
