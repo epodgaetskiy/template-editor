@@ -195,7 +195,8 @@
             "tsConfig": "apps/review/tsconfig.app.json",
             "assets": ["apps/review/src/favicon.ico", "apps/review/src/assets"],
             "styles": ["apps/review/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "webpackConfig":  "apps/review/webpackConfig.ts"
           },
           "configurations": {
             "production": {
@@ -225,7 +226,8 @@
         "serve": {
           "executor": "@nrwl/web:dev-server",
           "options": {
-            "buildTarget": "review:build"
+            "buildTarget": "review:build",
+            "webpackConfig":  "apps/review/webpackConfig.ts"
           },
           "configurations": {
             "production": {

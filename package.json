@@ -5,9 +5,10 @@
   "scripts": {
     "nx": "nx",
     "serve": "node dist/apps/api/main.js",
-    "start:client": "nx serve client",
+    "start:client": "nx serve client --port=4200",
     "start:backend": "nx serve backend",
-    "dev": "concurrently -p=\"{name}\" -n=\"React,NestJS\" -c=\"green,blue\" \"npm run start:client\" \"npm run start:backend\"",
+    "start:review": "nx serve review --port=4201",
+    "dev": "npm run build:client && npm run build:review && npm run start:backend",
     "build:client": "nx build client --prod",
     "build:review": "nx build review --prod --baseHref=review",
     "start": "nx serve",
@@ -33,6 +34,7 @@
   },
   "private": true,
   "dependencies": {
+    "@chakra-ui/react": "^1.6.1",
     "@emotion/react": "11.1.5",
     "@emotion/styled": "11.1.5",
     "@nestjs/common": "^7.0.0",
@@ -41,6 +43,8 @@
     "@nestjs/serve-static": "^2.1.4",
     "core-js": "^3.6.5",
     "document-register-element": "1.13.1",
+    "framer-motion": "^4.1.11",
+    "idb-keyval": "^5.0.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-router-dom": "5.2.0",
@@ -90,6 +94,7 @@
     "eslint-plugin-react-hooks": "4.2.0",
     "jest": "26.2.2",
     "prettier": "2.2.1",
+    "raw-loader": "^3.1.0",
     "ts-jest": "26.5.5",
     "ts-node": "~9.1.1",
     "typescript": "~4.1.4"
